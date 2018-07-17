@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "ajv": "^6.5.2",
     "aurelia-animator-css": "^1.0.4",
     "aurelia-bootstrapper": "^2.2.0",
     "aurelia-dialog": "^1.0.0-rc.2.0.0",

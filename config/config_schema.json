@@ -1,0 +1,29 @@
+{
+  "$id": "",
+  "$schema": "",
+  "title": "Config",
+  "type": "object",
+  "properties": {
+    "Stitch": {
+      "type": "object",
+      "appid": {
+        "description": "App ID for MongoDB Stitch",
+        "type": "string"
+      }
+    },
+    "db": {
+      "type": "object",
+      "name": {
+        "description": "The name for the Database your app is running out of.",
+        "type": "string"
+      },
+      "collections": {
+        "type": "object",
+        "people": {
+          "description": "Collection name of where users are located",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -85,7 +85,7 @@ module.exports = ({production, server, extractCss, coverage, analyze} = {}) => (
       { test: /\.js$/i, loader: 'babel-loader', exclude: nodeModulesDir,
         options: coverage ? { sourceMap: 'inline', plugins: [ 'istanbul' ] } : {},
       },
-      { test: /\.json$/i, loader: 'json-loader' },
+      // { test: /\.json$/i, loader: 'json-loader' },
       // use Bluebird as the global Promise implementation:
       { test: /[\/\\]node_modules[\/\\]bluebird[\/\\].+\.js$/, loader: 'expose-loader?Promise' },
       // embed small images and fonts as Data Urls and larger ones as files:
@@ -95,6 +95,9 @@ module.exports = ({production, server, extractCss, coverage, analyze} = {}) => (
       // load these fonts normally, as files:
       { test: /\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: 'file-loader' },
     ]
+  },
+  externals: {
+    'config-text': JSON.stringify(production ? require('./config/production.json') : require('./config/development.json'))
   },
   plugins: [
     new AureliaPlugin(),
