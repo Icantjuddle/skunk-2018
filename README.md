@@ -22,7 +22,8 @@
     - [Cloudflare](https://support.cloudflare.com/hc/en-us/articles/200169046-How-do-I-add-a-CNAME-record-)
 
 ### Configure
-... On the way
+Overwrite the content in the config directory and it will be applied to your app.
+Static content can be written in either [Markdown](https://www.markdownguide.org/cheat-sheet) or [HTML](https://web.stanford.edu/group/csp/cs21/htmlcheatsheet.pdf).
 
 ### Stack
 This [Aurelia](https://aurelia.io/) application runs on MongoDB [Atlas](http://atlas.mongodb.com) with [Stitch](http://stitch.mongodb.com).
