@@ -1,0 +1,11 @@
+{
+  "Stitch" : {
+    "appid" : "hackathon-kpnmx"
+  },
+  "db" : {
+    "name" : "Hackathon",
+    "collections" : {
+      "people" : "People"
+    }
+  }
+}
