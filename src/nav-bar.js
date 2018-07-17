@@ -13,6 +13,7 @@ export class NavBar {
     this.gs = globalState;
     this.router = router;
   }
+
   popLogin() {
     this.dialogService.open({ viewModel: LoginModal, model: 'Please Authenticate' }).then(response => {
       console.log(response);
@@ -47,6 +48,7 @@ export class NavBar {
   }
 
   isAdmin() {
+    console.log(this.gs.pl());
     return this.gs.pl() !== 'none';
   }
 }

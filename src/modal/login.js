@@ -2,13 +2,15 @@ import { inject } from 'aurelia-framework';
 import { DialogController } from 'aurelia-dialog';
 import { UserPasswordCredential } from 'mongodb-stitch-browser-sdk';
 import { GlobalState } from '../global_state';
+import {BindingSignaler} from 'aurelia-templating-resources';
 
-@inject(DialogController, GlobalState)
+@inject(DialogController, GlobalState, BindingSignaler)
 export class LoginModal {
-  constructor(controller, globalState) {
+  constructor(controller, globalState, signaler) {
     this.controller = controller;
     this.stitch = globalState;
     this.client = globalState.client();
+    this.signaler = signaler;
     this.answer = null;
 
     controller.settings.centerHorizontalOnly = true;
@@ -29,6 +31,7 @@ export class LoginModal {
       this.stitch.people().updateOne({ stitch_id: user.id }, {$set: { stitch_id: user.id, email: this.email}}, { upsert: true });
       this.stitch.people().find({stitch_id: user.id}, {permission_level: 1}).asArray().then((plDoc) => {
         this.stitch.setPermissionLevel(plDoc[0].permission_level);
+        this.signaler.signal('pl_change');
       });
       this.controller.ok();
     }).catch(err => {
