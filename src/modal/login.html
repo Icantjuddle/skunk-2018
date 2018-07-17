@@ -1,0 +1,21 @@
+<template>
+  <ai-dialog>
+    <h2>${message}</h2>
+    <h3>${errMsg}</h3>
+    <form role="form" submit.delegate="doLogin()">
+      <ai-dialog-body>
+        <label for "email"> Email </label>
+        <input type="text" , value.bind="email" placeholder="ben.judd@10gen.com">
+
+        <label for="password">Password</label>
+        <input type="password" value.bind="pass" placeholder="Password">
+      </ai-dialog-body>
+
+      <ai-dialog-footer>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <button class="btn btn-secondary" click.trigger="controller.cancel()">Cancel</button>
+      </ai-dialog-footer>
+    </form>
+
+  </ai-dialog>
+</template>

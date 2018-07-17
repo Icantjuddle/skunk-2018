@@ -706,6 +706,16 @@ aurelia-dependency-injection@^1.0.0:
     aurelia-metadata "^1.0.0"
     aurelia-pal "^1.0.0"
 
+aurelia-dialog@^1.0.0-rc.2.0.0:
+  version "1.0.0-rc.2.0.0"
+  resolved "https://registry.yarnpkg.com/aurelia-dialog/-/aurelia-dialog-1.0.0-rc.2.0.0.tgz#de863fc21bcde0d3a22f1a13e1a7367e64b0904c"
+  dependencies:
+    aurelia-dependency-injection "^1.0.0"
+    aurelia-framework "^1.0.0"
+    aurelia-metadata "^1.0.0"
+    aurelia-pal "^1.0.0"
+    aurelia-templating "^1.0.0"
+
 aurelia-event-aggregator@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/aurelia-event-aggregator/-/aurelia-event-aggregator-1.0.1.tgz#9d7c7c1e1efe1ef3a78785e76abe80601e2d34c8"
@@ -1628,7 +1638,7 @@ base64-arraybuffer@0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/base64-arraybuffer/-/base64-arraybuffer-0.1.5.tgz#73926771923b5a19747ad666aa5cd4bf9c6e9ce8"
 
-base64-js@^1.0.2:
+base64-js@^1.0.2, base64-js@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.3.0.tgz#cab1e6118f051095e58b5281aea8c1cd22bfc0e3"
 
@@ -1950,6 +1960,13 @@ buffer@^4.3.0:
     base64-js "^1.0.2"
     ieee754 "^1.1.4"
     isarray "^1.0.0"
+
+buffer@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.1.0.tgz#c913e43678c7cb7c8bd16afbcddb6c5505e8f9fe"
+  dependencies:
+    base64-js "^1.0.2"
+    ieee754 "^1.1.4"
 
 buildmail@4.0.1:
   version "4.0.1"
@@ -2982,7 +2999,7 @@ debug@3.1.0, debug@^3.1.0, debug@~3.1.0:
   dependencies:
     ms "2.0.0"
 
-debuglog@*, debuglog@^1.0.1:
+debuglog@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
 
@@ -3121,6 +3138,10 @@ des.js@^1.0.0:
 destroy@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
+
+detect-browser@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/detect-browser/-/detect-browser-3.0.0.tgz#3fc232002c56d427410a9e1ac3b3e8c3a80bb848"
 
 detect-conflict@^1.0.0:
   version "1.0.1"
@@ -3931,6 +3952,13 @@ faye-websocket@~0.11.0:
   resolved "https://registry.yarnpkg.com/faye-websocket/-/faye-websocket-0.11.1.tgz#f0efe18c4f56e4f40afc7e06c719fd5ee6188f38"
   dependencies:
     websocket-driver ">=0.5.1"
+
+fetch-everywhere@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/fetch-everywhere/-/fetch-everywhere-1.0.5.tgz#b2497f47a57d9026b3907c09756acf5f4bd34e8b"
+  dependencies:
+    node-fetch "^1.0.1"
+    whatwg-fetch ">=0.10.0"
 
 figgy-pudding@^3.0.0, figgy-pudding@^3.1.0:
   version "3.1.0"
@@ -5075,7 +5103,7 @@ import-local@^1.0.0:
     pkg-dir "^2.0.0"
     resolve-cwd "^2.0.0"
 
-imurmurhash@*, imurmurhash@^0.1.4:
+imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
 
@@ -5504,7 +5532,7 @@ is-scoped@^1.0.0:
   dependencies:
     scoped-regex "^1.0.0"
 
-is-stream@^1.0.0, is-stream@^1.1.0:
+is-stream@^1.0.0, is-stream@^1.0.1, is-stream@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
 
@@ -6351,10 +6379,6 @@ lockfile@^1.0.4:
   dependencies:
     signal-exit "^3.0.2"
 
-lodash._baseindexof@*:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/lodash._baseindexof/-/lodash._baseindexof-3.1.0.tgz#fe52b53a1c6761e42618d654e4a25789ed61822c"
-
 lodash._baseuniq@~4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash._baseuniq/-/lodash._baseuniq-4.6.0.tgz#0ebb44e456814af7905c6212fa2c9b2d51b841e8"
@@ -6362,27 +6386,9 @@ lodash._baseuniq@~4.6.0:
     lodash._createset "~4.0.0"
     lodash._root "~3.0.0"
 
-lodash._bindcallback@*:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz#e531c27644cf8b57a99e17ed95b35c748789392e"
-
-lodash._cacheindexof@*:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/lodash._cacheindexof/-/lodash._cacheindexof-3.0.2.tgz#3dc69ac82498d2ee5e3ce56091bafd2adc7bde92"
-
-lodash._createcache@*:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/lodash._createcache/-/lodash._createcache-3.1.2.tgz#56d6a064017625e79ebca6b8018e17440bdcf093"
-  dependencies:
-    lodash._getnative "^3.0.0"
-
 lodash._createset@~4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/lodash._createset/-/lodash._createset-4.0.3.tgz#0f4659fbb09d75194fa9e2b88a6644d363c9fe26"
-
-lodash._getnative@*, lodash._getnative@^3.0.0:
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
 
 lodash._root@~3.0.0:
   version "3.0.1"
@@ -6411,10 +6417,6 @@ lodash.memoize@^4.1.2:
 lodash.mergewith@^4.6.0:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.1.tgz#639057e726c3afbdb3e7d42741caa8d6e4335927"
-
-lodash.restparam@*:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
 
 lodash.tail@^4.1.1:
   version "4.1.1"
@@ -6941,6 +6943,63 @@ moment@2.x.x:
   version "2.22.2"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
 
+mongodb-stitch-browser-core@^4.0.9:
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/mongodb-stitch-browser-core/-/mongodb-stitch-browser-core-4.0.9.tgz#1b78b1f96691a7382bb72cea4c2a6f2c4cc6db5e"
+  dependencies:
+    detect-browser "^3.0.0"
+    mongodb-stitch-bson "^1.0.0"
+    mongodb-stitch-core-sdk "^4.0.9"
+
+mongodb-stitch-browser-sdk@^4.0.9:
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/mongodb-stitch-browser-sdk/-/mongodb-stitch-browser-sdk-4.0.9.tgz#22004b68ebafb142618f3a2921abd506ec95790e"
+  dependencies:
+    mongodb-stitch-browser-core "^4.0.9"
+    mongodb-stitch-browser-services-mongodb-remote "^4.0.9"
+
+mongodb-stitch-browser-services-mongodb-remote@^4.0.9:
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/mongodb-stitch-browser-services-mongodb-remote/-/mongodb-stitch-browser-services-mongodb-remote-4.0.9.tgz#e0ff414ad91428cb80ed495b3bfd2ad353b119dc"
+  dependencies:
+    mongodb-stitch-browser-core "^4.0.9"
+    mongodb-stitch-core-services-mongodb-remote "^4.0.9"
+
+mongodb-stitch-bson@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/mongodb-stitch-bson/-/mongodb-stitch-bson-1.0.0.tgz#97d8dd10ec4962b66cc06ab30abe7a8157cab594"
+  dependencies:
+    buffer "^5.1.0"
+
+mongodb-stitch-bson@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/mongodb-stitch-bson/-/mongodb-stitch-bson-1.0.1.tgz#2dad51f6e30653d7a06e4dce295ec93257718df6"
+  dependencies:
+    buffer "^5.1.0"
+
+mongodb-stitch-core-sdk@^4.0.9:
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/mongodb-stitch-core-sdk/-/mongodb-stitch-core-sdk-4.0.9.tgz#97ae65251d00d58c754bcabc18594ac10380c6b2"
+  dependencies:
+    base64-js "^1.3.0"
+    fetch-everywhere "^1.0.5"
+    mongodb-stitch-bson "^1.0.0"
+    mongodb-stitch-extjson "^1.0.0"
+
+mongodb-stitch-core-services-mongodb-remote@^4.0.9:
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/mongodb-stitch-core-services-mongodb-remote/-/mongodb-stitch-core-services-mongodb-remote-4.0.9.tgz#58fef85d948bb973f8db58a508d1c58417a4fcce"
+  dependencies:
+    mongodb-stitch-bson "^1.0.0"
+    mongodb-stitch-core-sdk "^4.0.9"
+
+mongodb-stitch-extjson@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/mongodb-stitch-extjson/-/mongodb-stitch-extjson-1.0.0.tgz#8307f0bf913f0ae56140438a0b7df523af30d647"
+  dependencies:
+    buffer "^5.1.0"
+    mongodb-stitch-bson "1.0.0"
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -7071,6 +7130,13 @@ node-fetch-npm@^2.0.2:
     encoding "^0.1.11"
     json-parse-better-errors "^1.0.0"
     safe-buffer "^5.1.1"
+
+node-fetch@^1.0.1:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-1.7.3.tgz#980f6f72d85211a5347c6b2bc18c5b84c3eb47ef"
+  dependencies:
+    encoding "^0.1.11"
+    is-stream "^1.0.1"
 
 node-forge@0.7.5:
   version "0.7.5"
@@ -8885,7 +8951,7 @@ readable-stream@~2.0.5, readable-stream@~2.0.6:
     string_decoder "~0.10.x"
     util-deprecate "~1.0.1"
 
-readdir-scoped-modules@*, readdir-scoped-modules@^1.0.0:
+readdir-scoped-modules@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/readdir-scoped-modules/-/readdir-scoped-modules-1.0.2.tgz#9fafa37d286be5d92cbaebdee030dc9b5f406747"
   dependencies:
@@ -11121,6 +11187,10 @@ websocket-driver@>=0.5.1:
 websocket-extensions@>=0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
+
+whatwg-fetch@>=0.10.0:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
 
 when@^3.7.7:
   version "3.7.8"
