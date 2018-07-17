@@ -6,7 +6,7 @@ export class App {
     config.options.pushState = true;
     config.map([
       { route: ['index', 'home', ''], moduleId: PLATFORM.moduleName('homepage'), title: 'Home' },
-      { route: 'me', moduleId: PLATFORM.moduleName('my_profile'), title: 'Me'},
+      { route: 'me', moduleId: PLATFORM.moduleName('user-detail'), title: 'Me'},
       { route: 'confirm/', moduleId: PLATFORM.moduleName('confirm-email'), title: 'Confirm'}
     ]);
     this.router = router;

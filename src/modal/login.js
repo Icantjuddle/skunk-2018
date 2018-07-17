@@ -7,6 +7,7 @@ import { StitchResources } from '../stitch_resources';
 export class LoginModal {
   constructor(controller, stitchResources) {
     this.controller = controller;
+    this.stitch = stitchResources;
     this.client = stitchResources.client();
     this.answer = null;
 
@@ -18,14 +19,14 @@ export class LoginModal {
   }
 
   doLogin() {
-    console.log('dologin called');
     if (this.email === undefined || this.pass === undefined) {
       this.errMsg = 'You must enter a valid email and password';
       return;
     }
     const credential = new UserPasswordCredential(this.email, this.pass);
     this.client.auth.loginWithCredential(credential).then((user) => {
-      console.log('authenticated with user:' + user.id);
+      //TODO: Log
+      this.stitch.people().updateOne({ email: this.email }, { stitch_id: user.id, email: this.email }, { upsert: true });
       this.controller.ok();
     }).catch(err => {
       this.errMsg = err;

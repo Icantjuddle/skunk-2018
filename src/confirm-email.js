@@ -18,7 +18,7 @@ export class ConfirmEmail {
       UserPasswordAuthProviderClient.factory
     );
     emailPassClient.confirmUser(token, tokenId).then(() => {
-      this.message = "Confirmed";
+      this.message = "Confirmed" ;
     }).catch((err) => {
       this.message = err;
     });
