@@ -9,13 +9,12 @@
 1. Easy to run, low deployment cost. 
 
 ## How-To...
-### Deply
+### Deploy
 1. Create a MongoDB [Atlas](https://cloud.mongodb.com/user#/atlas/login) account.
 1. Create a free-tier tier cluster. 
 1. Create a stitch application and link it to your new cluster.
 1. Fork this github repo. 
-    1. Overwrite the variables in the config folder. 
-1. `npm run configure`
+    1. Overwrite the variables and files in the config folder. 
 1. `npm run deploy`
 1. In your fork on github, under settings, turn on github pages.
 1. Point your DNS at this page with a CNAME entry.
@@ -24,6 +23,9 @@
 ### Configure
 Overwrite the content in the config directory and it will be applied to your app.
 Static content can be written in either [Markdown](https://www.markdownguide.org/cheat-sheet) or [HTML](https://web.stanford.edu/group/csp/cs21/htmlcheatsheet.pdf).
+
+Runtime variables can be set per environment via the appropriate `<env>.json` file in `./config/`.
+See the schema in `./config/config_schema.json` for how each variable should be set.
 
 ### Stack
 This [Aurelia](https://aurelia.io/) application runs on MongoDB [Atlas](http://atlas.mongodb.com) with [Stitch](http://stitch.mongodb.com).
