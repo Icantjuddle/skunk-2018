@@ -1,14 +1,14 @@
 import { inject } from 'aurelia-framework';
 import { DialogController } from 'aurelia-dialog';
 import { UserPasswordCredential } from 'mongodb-stitch-browser-sdk';
-import { StitchResources } from '../stitch_resources';
+import { GlobalState } from '../global_state';
 
-@inject(DialogController, StitchResources)
+@inject(DialogController, GlobalState)
 export class LoginModal {
-  constructor(controller, stitchResources) {
+  constructor(controller, globalState) {
     this.controller = controller;
-    this.stitch = stitchResources;
-    this.client = stitchResources.client();
+    this.stitch = globalState;
+    this.client = globalState.client();
     this.answer = null;
 
     controller.settings.centerHorizontalOnly = true;
@@ -26,7 +26,10 @@ export class LoginModal {
     const credential = new UserPasswordCredential(this.email, this.pass);
     this.client.auth.loginWithCredential(credential).then((user) => {
       //TODO: Log
-      this.stitch.people().updateOne({ email: this.email }, { stitch_id: user.id, email: this.email }, { upsert: true });
+      this.stitch.people().updateOne({ stitch_id: user.id }, {$set: { stitch_id: user.id, email: this.email}}, { upsert: true });
+      this.stitch.people().find({stitch_id: user.id}, {permission_level: 1}).asArray().then((plDoc) => {
+        this.stitch.setPermissionLevel(plDoc[0].permission_level);
+      });
       this.controller.ok();
     }).catch(err => {
       this.errMsg = err;

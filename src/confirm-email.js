@@ -1,13 +1,13 @@
 import { inject } from 'aurelia-framework';
-import { StitchResources } from './stitch_resources';
+import { GlobalState } from './global_state';
 import { UserPasswordAuthProviderClient } from 'mongodb-stitch-browser-sdk';
 
 
-@inject(StitchResources)
+@inject(GlobalState)
 export class ConfirmEmail {
-  constructor(stitchResources) {
+  constructor(GlobalState) {
     this.message = 'Hello world';
-    this.client = stitchResources.client();
+    this.client = GlobalState.client();
   }
   activate(params) {
     // Parse the URL query parameters

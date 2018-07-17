@@ -1,25 +1,25 @@
 <template>
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="me">Me</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="apply">Apply</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" click.trigger="popSignup()">Sign Up</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" click.trigger="popLogin()">Log In</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" click.trigger="popLogout()">Log Out</a>
-    </li>
-  </ul>
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="nav-brand" href="home"> {Hackathon: 2018s} </a>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" href="me">Me</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="apply">Apply</a>
+      </li>
+      <li if.bind="isAdmin()" class="nav-item">
+        <a class="nav-link" href="browse">Browse Users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" click.trigger="popSignup()">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" click.trigger="popLogin()">Log In</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" click.trigger="popLogout()">Log Out</a>
+      </li>
+    </ul>
+  </nav>
 </template>

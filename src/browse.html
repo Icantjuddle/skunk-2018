@@ -1,0 +1,19 @@
+<template>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-4">
+        <ul class="list-group">
+          <li repeat.for="person of people" class="list-group-item ${person.stitch_id === $parent.selected ? 'active' : ''}">
+            <a click.delegate="$parent.select(person)">
+              <h4>${person.email}</h4>
+              <p>${person.stitch_id}</p>
+            </a>
+        </ul>
+      </div>
+      <div if.bind="selected" class="col-md-8">
+        <compose view-model="./components/user-card" model.bind="sel_user"></compose>
+      </div>
+    </div>
+  </div>
+</template>

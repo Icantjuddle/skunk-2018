@@ -1,12 +1,12 @@
 import { inject } from 'aurelia-framework';
 import { DialogController } from 'aurelia-dialog';
-import { StitchResources } from '../stitch_resources';
+import { GlobalState } from '../global_state';
 
-@inject(DialogController, StitchResources)
+@inject(DialogController, GlobalState)
 export class LogoutModal {
-  constructor(controller, stitchResources) {
+  constructor(controller, GlobalState) {
     this.controller = controller;
-    this.client = stitchResources.client();
+    this.client = GlobalState.client();
     this.isLoggedIn = this.client.auth.isLoggedIn;
     this.logoutMessage = this.isLoggedIn ? 'Log Out' : 'You are not logged in';
     this.answer = null;

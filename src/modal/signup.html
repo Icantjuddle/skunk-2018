@@ -1,20 +1,22 @@
 <template>
-    <ai-dialog>
-       <ai-dialog-body>
-          <h3>${errMsg}</h3>
-          <form role="form" submit.delegate = "doSignup()">
-              <label for "email"> Email </label>
-              <input type="text", value.bind = "email" placeholder="ben.judd@10gen.com">
-        
-              <label for="password">Password</label> 
-              <input type="password" value.bind="pass" placeholder = "Password">
-        
-              <button type="submit" class="btn btn-primary">Sign Up</button>
-            </form>
-       </ai-dialog-body>
- 
-       <ai-dialog-footer>
-          <button click.trigger = "controller.cancel()">Cancel</button>
-       </ai-dialog-footer>	
-    </ai-dialog>	
- </template>
+  <ai-dialog>
+    <div class="container bg-light p-3">
+      <H2>Sign Up</H2>
+      <ai-dialog-body>
+        <h3>${errMsg}</h3>
+        <form role="form" submit.delegate="doSignup()">
+          <label for "email"> Email </label>
+          <input type="text" , value.bind="email" placeholder="ben.judd@10gen.com">
+
+          <label for="password">Password</label>
+          <input type="password" value.bind="pass" placeholder="Password">
+
+      </ai-dialog-body>
+      <ai-dialog-footer>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <button class="btn btn-secondary" click.trigger="controller.cancel()">Cancel</button>
+      </ai-dialog-footer>
+      </form>
+    </div>
+  </ai-dialog>
+</template>

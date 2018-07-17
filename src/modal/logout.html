@@ -1,12 +1,16 @@
 <template>
     <ai-dialog>
+        <div class="container bg-light p-3">
+
        <ai-dialog-body>
           <h3 >${logoutMessage}</h3>
        </ai-dialog-body>
  
        <ai-dialog-footer>
-          <button if.bind="isLoggedIn" click.trigger="doLogout()">Log Out</button>
-          <button click.trigger = "controller.cancel()">Cancel</button>
+          <button class="btn btn-primary" if.bind="isLoggedIn" click.trigger="doLogout()">Log Out</button>
+          <button class="btn btn-secondary" click.trigger="controller.cancel()">Cancel</button>
+
        </ai-dialog-footer>	
+      </div>
     </ai-dialog>	
  </template>

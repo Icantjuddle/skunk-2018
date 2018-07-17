@@ -1,3 +1,16 @@
 <template>
-  <h1>${message}</h1>
+  <h1>Please answer any and all questions.</h1>
+  <form>
+    <form>
+      <div class="form-group col-md-6">
+        <label for="event">Event</label>
+        <input type="text" class="form-control" id="event" value.to-view="event_title" readonly>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="q1">Why do you want to come?</label>
+        <input type="text" class="form-control text" id="text" value.bind="why_come">
+      </div>
+      <button type="button" class="btn btn-primary" click.delegate="onSave()">Save</button>
+      <button type="button" class="btn btn-warning" click.delegate="onDiscard()">Reset Changes</button>
+    </form>
 </template>

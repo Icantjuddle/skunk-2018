@@ -1,13 +1,13 @@
 import { inject } from 'aurelia-framework';
 import { DialogController } from 'aurelia-dialog';
 import { UserPasswordAuthProviderClient } from 'mongodb-stitch-browser-sdk';
-import { StitchResources } from '../stitch_resources';
+import { GlobalState } from '../global_state';
 
-@inject(DialogController, StitchResources)
+@inject(DialogController, GlobalState)
 export class SignupModal {
-  constructor(controller, stitchResources) {
+  constructor(controller, GlobalState) {
     this.controller = controller;
-    this.client = stitchResources.client();
+    this.client = GlobalState.client();
     this.answer = null;
 
     controller.settings.centerHorizontalOnly = true;

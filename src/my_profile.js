@@ -1,11 +1,11 @@
 import { inject } from 'aurelia-framework';
 import { RemoteMongoClient } from 'mongodb-stitch-browser-sdk';
-import { StitchResources } from './stitch_resources';
+import { GlobalState } from './global_state';
 
-@inject(StitchResources)
+@inject(GlobalState)
 export class MyProfile {
-  constructor(stitchResources) {
-    this.client = stitchResources.client();
+  constructor(GlobalState) {
+    this.client = GlobalState.client();
     this.message = 'Hello world';
   }
 
