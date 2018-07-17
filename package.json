@@ -91,7 +91,9 @@
   "scripts": {
     "start": "nps",
     "test": "nps test",
-    "deploy": "./node_modules/aurelia-cli/bin/aurelia-cli.js build --env prod && cp config/CNAME dist/CNAME && git checkout -B gh-pages && git add -f dist static/* && git stash && git stash apply&& git commit -am 'Rebuild' && git filter-branch -f --prune-empty --subdirectory-filter dist && git push -f origin gh-pages && git checkout -"
+    "deploy": "./node_modules/aurelia-cli/bin/aurelia-cli.js build && cp config/CNAME dist/CNAME && git checkout -B gh-pages && git add -f dist static/* && git stash && git stash apply&& git commit -am 'Rebuild' && git filter-branch -f --prune-empty --subdirectory-filter dist && git push -f origin gh-pages && git checkout -",
+    "deployProd": "./node_modules/aurelia-cli/bin/aurelia-cli.js build --env prod && cp config/CNAME dist/CNAME && git checkout -B gh-pages && git add -f dist static/* && git stash && git stash apply&& git commit -am 'Rebuild' && git filter-branch -f --prune-empty --subdirectory-filter dist && git push -f origin gh-pages && git checkout -"
+
   },
   "main": "dist/app.bundle.js"
 }
