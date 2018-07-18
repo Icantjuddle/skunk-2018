@@ -8,7 +8,15 @@
       <label for="phone">Phone Number</label>
       <input type="number" class="form-control tel" id="phone" value.bind="phone">
     </div>
-    <button type="button" class="btn btn-primary" click.delegate="onSave()">Save</button>
+    <div class="form-group col-md-6">
+      <label for="shirt_size">Shirt Size</label>
+      <select id="shirt_size" class="custom-select custom-select-sm" value.bind="size" required>
+        <option model="null">Choose...</option>
+        <option repeat.for="size of shirt_sizes" value.bind="size">${size}</option>
+      </select>
+      <div class="invalid-feedback">Example invalid custom select feedback</div>
+    </div>
+    <button type="submit" class="btn btn-primary" click.delegate="onSave()">Save</button>
     <button type="button" class="btn btn-warning" click.delegate="onDiscard()">Reset</button>
   </form>
 </template>

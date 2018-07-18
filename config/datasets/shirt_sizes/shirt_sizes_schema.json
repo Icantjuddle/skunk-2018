@@ -1,0 +1,9 @@
+{
+  "$id": "",
+  "$schema": "",
+  "title": "Shirt Size Schema",
+  "type": "array",
+  "items": {
+    "type": "string"
+  }
+}

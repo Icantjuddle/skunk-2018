@@ -1,7 +1,7 @@
 import { inject } from 'aurelia-framework';
 import { DialogService } from 'aurelia-dialog';
-import html  from '../config/landing.html';
-import md from '../config/landing.md';
+import html  from '../config/landing_left.html';
+import md from '../config/landing_right.md';
 
 @inject(DialogService)
 export class Homepage {
