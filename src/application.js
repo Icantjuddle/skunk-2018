@@ -1,11 +1,14 @@
 import { inject } from 'aurelia-framework';
 import { GlobalState } from './global_state';
+import questions from '../config/datasets/application/questions.json';
 
 @inject(GlobalState)
 export class Application {
   constructor(GlobalState) {
     this.stitch = GlobalState;
     this.event_title = '2018f';
+    this.qs = questions; 
+    this.answers = {};
   }
 
   activate() {
@@ -26,14 +29,12 @@ export class Application {
       .then((user) => {
         if (user.length < 1) return;
         let me = user[0];
-        if (!me[this.event_title]) return;
-        this.why_come = me[this.event_title].why_come || '';
+        this.responses = me[this.event_title];
       });
   }
 
   saveData() {
-    let updatData = {};
-    updatData.why_come = this.why_come;
+    let updatData = this.answers;
     let to_send = {};
     to_send.$set = {};
     to_send.$set[this.event_title] = updatData;

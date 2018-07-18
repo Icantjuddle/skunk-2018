@@ -11,7 +11,7 @@
     <div class="form-group col-md-6">
       <label for="shirt_size">Shirt Size</label>
       <select id="shirt_size" class="custom-select custom-select-sm" value.bind="size" required>
-        <option model="null">Choose...</option>
+        <option value="null">Choose...</option>
         <option repeat.for="size of shirt_sizes" value.bind="size">${size}</option>
       </select>
       <div class="invalid-feedback">Example invalid custom select feedback</div>
