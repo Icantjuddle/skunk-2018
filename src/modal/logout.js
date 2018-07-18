@@ -21,9 +21,10 @@ export class LogoutModal {
   }
 
   doLogout() {
-    this.gs.client().auth.logout();
-    this.gs.setPermissionLevel('none');
-    this.signaler.signal('pl_change');
-    this.controller.ok();
+    this.gs.client().auth.logout().then(()=>{
+      this.gs.setPermissionLevel('none');
+      this.signaler.signal('pl_change');
+      this.controller.ok();
+    });
   }
 }

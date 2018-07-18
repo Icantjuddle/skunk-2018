@@ -11,13 +11,13 @@
       <li if.bind="isAdmin() & signal: 'pl_change'" class="nav-item">
         <a class="nav-link" href="browse">Browse Users</a>
       </li>
-      <li if.bind="!isLoggedIn() & signal: 'pl_change'" class="nav-item">
+      <li show.bind="!isLoggedIn() & signal: 'pl_change'" class="nav-item">
         <a class="nav-link" click.trigger="popSignup()">Sign Up</a>
       </li>
-      <li if.bind="!isLoggedIn() & signal: 'pl_change'" class="nav-item">
+      <li show.bind="!isLoggedIn() & signal: 'pl_change'" class="nav-item">
         <a class="nav-link text-success" click.trigger="popLogin()">Log In</a>
       </li>
-      <li if.bind="isLoggedIn() & signal: 'pl_change'" class="nav-item">
+      <li show.bind="isLoggedIn() & signal: 'pl_change'" class="nav-item">
         <a class="nav-link text-warning" click.trigger="popLogout()">Log Out</a>
       </li>
     </ul>

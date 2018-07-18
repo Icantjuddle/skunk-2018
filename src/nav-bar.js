@@ -16,34 +16,23 @@ export class NavBar {
 
   popLogin() {
     this.dialogService.open({ viewModel: LoginModal, model: 'Please Authenticate' }).then(response => {
-      console.log(response);
-
-      if (!response.wasCancelled) {
-        console.log('OK');
-      } else {
-        console.log('cancelled');
-      }
-      console.log(response.output);
+      // if (!response.wasCancelled) {
+      // } else {
+      // }
     });
   }
   popSignup() {
     this.dialogService.open({ viewModel: SignupModal, model: 'Signup' }).then(response => {
-      console.log(response);
-      if (!response.wasCancelled) {
-        console.log('OK');
-      } else {
-        console.log('cancelled');
-      }
+      // if (!response.wasCancelled) {
+      // } else {
+      // }
     });
   }
   popLogout() {
     this.dialogService.open({ viewModel: LogoutModal, model: 'LogOut' }).then(response => {
-      console.log(response);
-      if (!response.wasCancelled) {
-        console.log('OK');
-      } else {
-        console.log('cancelled');
-      }
+      // if (!response.wasCancelled) {
+      // } else {
+      // }
     });
   }
 
