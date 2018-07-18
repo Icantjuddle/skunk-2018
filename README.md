@@ -14,11 +14,21 @@
 1. Create a free-tier tier cluster. 
 1. Create a stitch application and link it to your new cluster.
 1. Fork this github repo. 
-    1. Overwrite the variables and files in the config folder. 
+    1. Clone locally.
+    1. `npm install`
+1. Edit the variables and files in the config folder. 
+1. __Commit your changes__
 1. `npm run deploy`
 1. In your fork on github, under settings, turn on github pages.
 1. Point your DNS at this page with a CNAME entry.
     - [Cloudflare](https://support.cloudflare.com/hc/en-us/articles/200169046-How-do-I-add-a-CNAME-record-)
+
+_After the first deploy you can just edit config and re-run the deploy script_
+
+### Deploy Locally
+1. `npm install`
+1. `npm run dev`
+1. Open [localhost:8080](http://localhost:8080)
 
 ### Configure
 Overwrite the content in the config directory and it will be applied to your app.
