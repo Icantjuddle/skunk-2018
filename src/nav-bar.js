@@ -48,7 +48,10 @@ export class NavBar {
   }
 
   isAdmin() {
-    console.log(this.gs.pl());
     return this.gs.pl() !== 'none';
+  }
+
+  isLoggedIn() {
+    return this.gs.client().auth.isLoggedIn;
   }
 }

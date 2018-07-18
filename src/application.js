@@ -38,7 +38,6 @@ export class Application {
     let to_send = {};
     to_send.$set = {};
     to_send.$set[this.event_title] = updatData;
-    console.log(to_send);
     if (this.why_come !== undefined) updatData.why_come = this.why_come;
     this.stitch.people().updateOne({ stitch_id: this.stitch.client().auth.user.id }, to_send, { upsert: false });
   }
