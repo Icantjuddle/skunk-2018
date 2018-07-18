@@ -2,11 +2,11 @@
   <h1>Please answer all the questions.</h1>
   <form>
     <div class="form-group col-md-6" repeat.for="q of qs" ref="$root" index.bind="$index">
-      <div if.bind="q.type === 'short_answer'">
+      <div if.bind="q.question_type === 'short_answer'">
         <label for="$index">${q.question}</label>
         <input type="text" class="form-control text" id="${$index}" value.bind="answers[$index]" required>
       </div>
-      <div if.bind="q.type === 'select'">
+      <div if.bind="q.question_type === 'select'">
         <label for="$index">${q.question}</label>
         <select id="shirt_size" class="custom-select custom-select-sm" value.bind="answers[$root.index]" required>
           <option value="null">Choose...</option>

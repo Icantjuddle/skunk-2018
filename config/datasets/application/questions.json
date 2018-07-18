@@ -1,17 +1,17 @@
 [
   {
     "question" : "Here is my question",
-    "type": "short_answer",
+    "question_type": "short_answer",
     "responses": []
   },
   {
     "question" : "Here is my second question",
-    "type": "short_answer",
+    "question_type": "short_answer",
     "responses": []
   },
   {
     "question": "Question 2",
-    "type": "select",
+    "question_type": "select",
     "responses": ["opt 1", "opt 2", "opt 3"]
   }
 ]

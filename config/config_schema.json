@@ -1,6 +1,5 @@
 {
-  "$id": "",
-  "$schema": "",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Config",
   "type": "object",
   "properties": {

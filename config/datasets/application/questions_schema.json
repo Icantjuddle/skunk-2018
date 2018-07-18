@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Shirt Size Schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "question": {
+      "description": "The text of the question to be displayed",
+      "type": "string"
+    },
+    "question_type": {
+      "description": "The type of question that this is",
+      "type": "string",
+      "enum": [
+        "short_answer",
+        "select"
+      ]
+    },
+    "responses": {
+      "description": "List of allowed answers for selection type questions, ignored on short_answer",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
