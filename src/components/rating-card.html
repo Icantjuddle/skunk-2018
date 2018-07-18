@@ -1,0 +1,33 @@
+<template>
+  <h3>Please score the application?</h3>
+  <form>
+    <fieldset disabled>
+      <div class="form-group col-md-8" repeat.for="q of qs" ref="$root" index.bind="$index">
+        <div if.bind="q.question_type === 'short_answer'">
+          <label for="$index">${q.question}</label>
+          <input type="text" class="form-control text" id="${$index}" value.to-view="answers[$index]">
+        </div>
+        <div if.bind="q.question_type === 'select'">
+          <label for="$index">${q.question}</label>
+          <select id="shirt_size" class="custom-select custom-select-sm" value.to-view="answers[$root.index]">
+            <option class="disabled">${answers[$root.index]}</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  <div class="col-md-8">
+    <form role="form bg-light">
+      <div class="form-group">
+        <label for "comment">Comment</label>
+        <textarea class="form-control" rows="3" value.bind="rating.comment" placeholder="Your thoughts here..." id="comment"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="score">Score: ${rating.score}</label>
+        <input type="range" id="score" value.bind="rating.score" class="form-control-range">
+      </div>
+      <button class="btn btn-primary" click.trigger="saveRating()">Save</button>
+      <button class="btn btn-warning" click.trigger="reloadRating()">Reset</button>
+    </form>
+  </div>
+</template>
