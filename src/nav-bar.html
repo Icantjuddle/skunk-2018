@@ -1,25 +1,15 @@
 <template>
   <nav class="navbar navbar-expand-md navbar-light bg-light">
     <a class="nav-brand" href="home"> {Hackathon: 2018s} </a>
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link" href="me">Me</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="apply">Apply</a>
-      </li>
-      <li if.bind="isAdmin() & signal: 'pl_change'" class="nav-item">
-        <a class="nav-link" href="browse">Browse Users</a>
-      </li>
-      <li show.bind="!isLoggedIn() & signal: 'pl_change'" class="nav-item">
-        <a class="nav-link" click.trigger="popSignup()">Sign Up</a>
-      </li>
-      <li show.bind="!isLoggedIn() & signal: 'pl_change'" class="nav-item">
-        <a class="nav-link text-success" click.trigger="popLogin()">Log In</a>
-      </li>
-      <li show.bind="isLoggedIn() & signal: 'pl_change'" class="nav-item">
-        <a class="nav-link text-warning" click.trigger="popLogout()">Log Out</a>
-      </li>
-    </ul>
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="me">Me</a>
+      <a class="nav-link" href="apply">Apply</a>
+      <a if.bind="isAdmin() & signal: 'pl_change'" class="nav-item nav-link" href="browse">Browse Users</a>
+    </div>
+    <div class="navbar-nav ml-auto">
+      <a show.bind="!isLoggedIn() & signal: 'pl_change'" class="nav-item nav-link" click.trigger="popSignup()">Sign Up</a>
+      <a show.bind="!isLoggedIn() & signal: 'pl_change'" class="nav-item nav-link text-success" click.trigger="popLogin()">Log In</a>
+      <a show.bind="isLoggedIn() & signal: 'pl_change'" class="nav-item av-link text-warning" click.trigger="popLogout()">Log Out</a>
+    </div>
   </nav>
 </template>
